@@ -14,7 +14,8 @@ func main() {
 	fmt.Println("Hello World"[1])
 	// function1()
 	// function2()
-	forCycle2()
+	// forCycle2()
+	arrays3()
 }
 
 var(
@@ -58,4 +59,42 @@ func forCycle2() {
 			fmt.Println(i, "odd")
 		}
 	}
+}
+
+func arrays1() {
+	var x [5]int
+	x[4]=100
+	fmt.Println(x)
+}
+
+func arrays2() {
+	var x[5]float64
+	x[0]=98
+	x[1]=93
+	x[2]=77
+	x[3]=82
+	x[4]=83
+
+	var total float64=0
+	for i:=0; i <5 ; i++ {
+		total+=x[i]
+	}
+	fmt.Println(total/float64(len(x)))
+}
+
+func arrays3() {
+	var x[5]float64
+	x[0]=98
+	x[1]=93
+	x[2]=77
+	x[3]=82
+	x[4]=83
+
+	x=[5]float64{98, 93, 77, 82, 83,}
+
+	var total float64 =0
+	for _, value := range x {
+		total += value
+	}
+	fmt.Println(total/float64(len(x)))
 }
