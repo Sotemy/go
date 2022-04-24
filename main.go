@@ -15,7 +15,8 @@ func main() {
 	// function1()
 	// function2()
 	// forCycle2()
-	arrays3()
+	// arrays3()
+	maps3()
 }
 
 var(
@@ -97,4 +98,98 @@ func arrays3() {
 		total += value
 	}
 	fmt.Println(total/float64(len(x)))
+	arr := [5]float64{1,2,3,4,5}
+	y := arr[0:5]
+	fmt.Println(arr)
+	fmt.Println(y)
+}
+
+func maps1() {
+	// var x map[string]int
+	x := make(map[int]int)
+	x[1]=10
+	x[2]=2
+	fmt.Println(x)
+	delete(x, 1)
+	fmt.Println(x)
+}
+
+func maps2() {
+	elements := make(map[string]string)
+	elements["H"] = "Hydrogen"
+	elements["He"] = "Helium"
+	elements["Li"] = "Lithium"
+	elements["Be"] = "Beryllium"
+	elements["B"] = "Boron"
+	elements["C"] = "Carbon"
+	elements["N"] = "Nitrogen"
+	elements["O"] = "Oxygen"
+	elements["F"] = "Fluorine"
+	elements["Ne"] = "Neon"
+	elements = map[string]string{
+		"H":  "Hydrogen",
+		"He": "Helium",
+		"Li": "Lithium",
+		"Be": "Beryllium",
+		"B":  "Boron",
+		"C":  "Carbon",
+		"N":  "Nitrogen",
+		"O":  "Oxygen",
+		"F":  "Fluorine",
+		"Ne": "Neon",
+	}
+	
+	fmt.Println(elements["Li"])
+
+	name, ok := elements["Un"]
+	fmt.Println(name, ok)
+}
+
+func maps3() {
+	elements := map[string]map[string]string{
+		"H": map[string]string{
+		  "name":"Hydrogen",
+		  "state":"gas",
+		},
+		"He": map[string]string{
+		  "name":"Helium",
+		  "state":"gas",
+		},
+		"Li": map[string]string{
+		  "name":"Lithium",
+		  "state":"solid",
+		},
+		"Be": map[string]string{
+		  "name":"Beryllium",
+		  "state":"solid",
+		},
+		"B":  map[string]string{
+		  "name":"Boron",
+		  "state":"solid",
+		},
+		"C":  map[string]string{
+		  "name":"Carbon",
+		  "state":"solid",
+		},
+		"N":  map[string]string{
+		  "name":"Nitrogen",
+		  "state":"gas",
+		},
+		"O":  map[string]string{
+		  "name":"Oxygen",
+		  "state":"gas",
+		},
+		"F":  map[string]string{
+		  "name":"Fluorine",
+		  "state":"gas",
+		},
+		"Ne":  map[string]string{
+		  "name":"Neon",
+		  "state":"gas",
+		},
+	}
+
+	if el, ok := elements["Li"]; ok {
+		fmt.Println(el["name"], el["state"])
+	}
 }
