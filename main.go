@@ -16,8 +16,54 @@ func main() {
 	// function2()
 	// forCycle2()
 	// arrays3()
-	maps3()
+	// maps3()
+	xs := []float64{98,93,77,82,83}
+	fmt.Println(average(xs))
+	// fmt.Println(f2())
+	xy :=[]int{2,3,7}
+	fmt.Println(add(1,2,3,4))
+	fmt.Println(add(xy...))
+	addIt:=func(x,y int) int {
+		return x+y
+	}
+	fmt.Println(addIt(1,1))
+	next:=clousure2()
+	fmt.Println(next())
+	fmt.Println(next())
+
 }
+
+func clousure2() func() uint {
+	i:=uint(0)
+	return func() (ret uint) {
+		ret = i
+		i+=2
+		return
+	}
+}
+
+func clousure1() {
+	x:=0
+	increment:=func() int {
+		x++
+		return x
+	}
+	fmt.Println(increment())
+	fmt.Println(increment())
+}
+
+func add(args ...int) int {
+	total:=0
+	for _, v:= range args{
+		total+=v
+	}
+	return total
+}
+
+func f2() (r int) {
+	r = 1
+	return
+  }
 
 var(
 	a = 5
@@ -193,3 +239,11 @@ func maps3() {
 		fmt.Println(el["name"], el["state"])
 	}
 }
+
+func average(xs []float64) float64 {
+	total := 0.0
+	for _, v := range xs {
+		total += v
+	}
+	return total / float64(len(xs))
+  }
